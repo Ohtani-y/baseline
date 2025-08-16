@@ -1,7 +1,7 @@
 # baseline
 改定１　DeepMATHはBASELINEから廃止になりました。
 
-改定2　 検討中　https://github.com/analokmaus/kaggle-aimo2-fast-math-r1　実装コードを追加
+改定2　 検討中　https://github.com/analokmaus/kaggle-aimo2-fast-math-r1   実装コードを追加
 
 - Kaggle Fast-Math-R1	[解説](./data/process_dataset.md)
 
