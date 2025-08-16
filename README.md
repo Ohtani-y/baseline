@@ -1,8 +1,18 @@
 # baseline
-8/11までで完成しているベースラインです。ぜひ修正、追加してください。
-GPU8枚での起動を想定しています。枚数を変化させる場合は、個人で変更してください
+改定１　DeepMATHはBASELINEから廃止になりました。
+改定2　 検討中　https://github.com/analokmaus/kaggle-aimo2-fast-math-r1　実装コードを追加
+
+- Kaggle Fast-Math-R1	[解説](./data/process_dataset.md)
+
+- ./qwen3-32b_sft_fast_math.sh   Fast-Math版  [解説](./train/report_SFT.md) 
+
+- ./qwen3-32b_grpo_rewards.sh   Kaggle報酬版   [解説](./train/report_GRPO.md)
+
+ ~~8/11~~   8/16までで完成しているベースラインです。ぜひ修正、追加してください。
+  GPU8枚での起動を想定しています。枚数を変化させる場合は、個人で変更してください
 
 <コードの構成>
+
 ```bash
 baseline
 .
@@ -44,7 +54,7 @@ baseline
 └── train
     ├── qwen3-32b_grpo.sh
     └── qwen3-32b_sft.sh
- ```
+```
 
 
 # 📝 リポジトリ概要
@@ -129,6 +139,7 @@ baseline
 
 0.  **準備**:
     bashではいる
+    
     ```bash
     bash ../shareP12/scancel_hatakeyama.sh gpu84 gpu85 gpu86 && srun --job-name=evaluate --partition P12 --nodes=1 --nodelist osk-gpu[86] --gpus-per-node=4 --ntasks=16 --time=12:00:00 --pty bash -i
     ```
@@ -162,7 +173,7 @@ baseline
     export WANDB_ENTITY=<自分の名前>
     export WANDB_PROJECT_NAME="Qwen3_32B_SFT"
     export WANDB_RUN_NAME="Qwen3_32B_SFT_MATH"
-    ```
+   ```
    
 1.  **torchrunの実行**:
 2.  **チェックポイントの変換**:
@@ -198,7 +209,7 @@ vLLMサーバーを個別に管理し、予測と評価を別々に実行しま�
     export CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7
     #※AMD製のGPUではないため、ROCR_VISIBLE_DEVICES を指定しないようにしてください。指定するとエラーになります。
     unset ROCR_VISIBLE_DEVICES
-
+    
     ulimit -v unlimited
     ulimit -m unlimited
     ```
@@ -242,4 +253,5 @@ vLLMサーバーを個別に管理し、予測と評価を別々に実行しま�
 
 ## 🎯 ベースラインチャート
 <img width="1210" height="600" alt="image" src="https://github.com/user-attachments/assets/e5bf2573-c143-47bb-9735-d84888a5c986" />
-時間の都合上、DeepMATHのGRPO部分はできていないです。
+~~時間の都合上、DeepMATHのGRPO部分はできていないです。~~
+

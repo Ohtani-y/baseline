@@ -1,0 +1,5 @@
+datasets
+scikit-learn
+huggingface-hub
+# オプション：トークン長制限を使用する場合
+# transformers
